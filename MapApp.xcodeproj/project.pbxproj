@@ -12,6 +12,8 @@
 		EDBEBE9B20D07C32001DC823 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EDBEBE9920D07C32001DC823 /* Main.storyboard */; };
 		EDBEBE9D20D07C35001DC823 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EDBEBE9C20D07C35001DC823 /* Assets.xcassets */; };
 		EDBEBEA020D07C35001DC823 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EDBEBE9E20D07C35001DC823 /* LaunchScreen.storyboard */; };
+		EDBEBEA920D07EC8001DC823 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EDBEBEA820D07EC8001DC823 /* MapKit.framework */; };
+		EDBEBEAB20D0861F001DC823 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EDBEBEAA20D0861F001DC823 /* CoreLocation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +24,8 @@
 		EDBEBE9C20D07C35001DC823 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EDBEBE9F20D07C35001DC823 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EDBEBEA120D07C35001DC823 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EDBEBEA820D07EC8001DC823 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		EDBEBEAA20D0861F001DC823 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +33,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EDBEBEAB20D0861F001DC823 /* CoreLocation.framework in Frameworks */,
+				EDBEBEA920D07EC8001DC823 /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,6 +46,7 @@
 			children = (
 				EDBEBE9420D07C32001DC823 /* MapApp */,
 				EDBEBE9320D07C32001DC823 /* Products */,
+				EDBEBEA720D07EC7001DC823 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -62,6 +69,15 @@
 				EDBEBEA120D07C35001DC823 /* Info.plist */,
 			);
 			path = MapApp;
+			sourceTree = "<group>";
+		};
+		EDBEBEA720D07EC7001DC823 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EDBEBEAA20D0861F001DC823 /* CoreLocation.framework */,
+				EDBEBEA820D07EC8001DC823 /* MapKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

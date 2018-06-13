@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" systemVersion="17A277" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,16 +13,70 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="MapApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" showsScale="YES" showsTraffic="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IrX-jJ-fxN">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="3bP-sB-0Hf" appends="YES" id="bwm-DM-epO"/>
+                                </connections>
+                            </mapView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TYZ-rZ-hUK">
+                                <rect key="frame" x="0.0" y="623" width="375" height="44"/>
+                                <items>
+                                    <barButtonItem title="現在地" id="vEP-jR-Rch">
+                                        <connections>
+                                            <action selector="trackingButtonWasTapped:" destination="BYZ-38-t0r" id="PpZ-U0-nup"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="rfi-5U-T6C"/>
+                                    <barButtonItem title="ターゲット" id="mZm-ly-vm9">
+                                        <connections>
+                                            <action selector="toolBarButtonWasTapped:" destination="BYZ-38-t0r" id="aDj-9h-MN4"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0NG-XL-Fix">
+                                <rect key="frame" x="308" y="577" width="51" height="30"/>
+                                <state key="normal" title="remove"/>
+                                <connections>
+                                    <action selector="removeAnnotationButtonWasTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ryu-ii-fa4"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="IrX-jJ-fxN" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="7N1-Px-GPF"/>
+                            <constraint firstItem="IrX-jJ-fxN" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="926-GP-SLx"/>
+                            <constraint firstItem="TYZ-rZ-hUK" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Li4-iv-htM"/>
+                            <constraint firstAttribute="bottom" secondItem="IrX-jJ-fxN" secondAttribute="bottom" id="NHn-gh-WQA"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="0NG-XL-Fix" secondAttribute="trailing" constant="16" id="aH2-Lc-YNE"/>
+                            <constraint firstItem="IrX-jJ-fxN" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="ii5-KP-xDB"/>
+                            <constraint firstItem="TYZ-rZ-hUK" firstAttribute="top" secondItem="0NG-XL-Fix" secondAttribute="bottom" constant="16" id="mMa-c1-46d"/>
+                            <constraint firstItem="TYZ-rZ-hUK" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="oHR-Eb-bAU"/>
+                            <constraint firstItem="TYZ-rZ-hUK" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="qAX-LH-NEG"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="mapView" destination="IrX-jJ-fxN" id="ggY-Fp-7cX"/>
+                        <outlet property="toolbar" destination="TYZ-rZ-hUK" id="sNg-zK-0hs"/>
+                        <outlet property="trackingButton" destination="vEP-jR-Rch" id="Vxf-d7-S2z"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="3bP-sB-0Hf">
+                    <connections>
+                        <action selector="mapViewWasLongPressed:" destination="BYZ-38-t0r" id="pj7-xa-t8T"/>
+                    </connections>
+                </pongPressGestureRecognizer>
             </objects>
+            <point key="canvasLocation" x="136.80000000000001" y="133.5832083958021"/>
         </scene>
     </scenes>
 </document>
